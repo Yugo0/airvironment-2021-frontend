@@ -13,7 +13,9 @@ const Header = () => {
       </div>
       <div className="menu opacity">
         <div className="all-caps">all data</div>
-        <div className="all-caps">averages</div>
+        <Link to="/averages">
+          <div className="all-caps">averages</div>
+        </Link>
       </div>
     </div>
   );

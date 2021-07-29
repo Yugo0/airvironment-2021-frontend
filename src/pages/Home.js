@@ -115,7 +115,6 @@ function Home() {
         </div>
         <p className="signature">Frontend team</p>
       </div>
-      <MeasurementsCard />
     </>
   );
 }
