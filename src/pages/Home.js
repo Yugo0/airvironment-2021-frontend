@@ -1,5 +1,7 @@
 import React from "react";
 import "../assets/styles/pages/Home.scss";
+import { MeasurementsCard } from "../components/index";
+// import { MeasurementsCard } from "../components";
 
 function Home() {
   return (
@@ -113,6 +115,7 @@ function Home() {
         </div>
         <p className="signature">Frontend team</p>
       </div>
+      <MeasurementsCard />
     </>
   );
 }
