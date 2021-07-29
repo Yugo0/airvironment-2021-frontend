@@ -2,12 +2,14 @@
 
 .home-page-container {
   max-width: 752px;
+
   margin: 45px auto 0 auto;
   padding: 0 24px;
   font-family: $roboto-black;
   font-size: 28px;
   line-height: 37px;
   color: rgba($color-black, 0.16);
+  height: calc(100vh - 125px);
 
   .home-page-header {
     width: fit-content;

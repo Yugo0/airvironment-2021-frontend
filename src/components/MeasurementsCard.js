@@ -7,13 +7,13 @@ import {
   TemperatureIconSmall,
 } from "../assets/icons";
 
-const MeasurementsCard = () => {
+const MeasurementsCard = ({ data, fetchData }) => {
   return (
     <div className="measurementCard">
       <div className="measurementCard__top">
         <div className="dayDateContainer">
-          <div className="day">Wed</div>
-          <div className="date">07. Jul. 2021</div>
+          <div className="day">{data.day}</div>
+          <div className="date">{data.date}</div>
         </div>
       </div>
       <hr />
@@ -27,18 +27,18 @@ const MeasurementsCard = () => {
               <div className="maxAndMin">
                 <div className="max">
                   <HighValueIcon />
-                  <div className="max__reading">30ºC</div>
+                  <div className="max__reading">{data.maxTemp}ºC</div>
                 </div>
                 <div className="min">
                   <LowValueIcon />
-                  <div className="min__reading">30ºC</div>
+                  <div className="min__reading">{data.minTemp}ºC</div>
                 </div>
               </div>
             </div>
           </div>
           <div className="readingRight">
             <p>
-              <span>/</span> 26ºC
+              <span>/</span> {Math.round(fetchData.temperature)}ºC
             </p>
           </div>
         </div>
@@ -51,18 +51,18 @@ const MeasurementsCard = () => {
               <div className="maxAndMin">
                 <div className="max">
                   <HighValueIcon />
-                  <div className="max__reading">56%</div>
+                  <div className="max__reading">{data.maxHumidity}%</div>
                 </div>
                 <div className="min">
                   <LowValueIcon />
-                  <div className="min__reading">40%</div>
+                  <div className="min__reading">{data.minHumidity}%</div>
                 </div>
               </div>
             </div>
           </div>
           <div className="readingRight">
             <p>
-              <span>/</span> 48%
+              <span>/</span> {Math.round(fetchData.humidity)}%
             </p>
           </div>
         </div>
@@ -75,18 +75,20 @@ const MeasurementsCard = () => {
               <div className="maxAndMin">
                 <div className="max">
                   <HighValueIcon />
-                  <div className="max__reading">0,70ppb</div>
+                  <div className="max__reading">{data.maxPollution}ppb</div>
                 </div>
                 <div className="min">
                   <LowValueIcon />
-                  <div className="min__reading">0,50ppb</div>
+                  <div className="min__reading">{data.minPollution}ppb</div>
                 </div>
               </div>
             </div>
           </div>
           <div className="readingRight">
             <p>
-              <span>/</span> 0,60<span className="ppb">ppb</span>
+              <span>/</span>{" "}
+              {String((fetchData.pollution / 100).toFixed(2)).replace(".", ",")}
+              <span className="ppb">ppb</span>
             </p>
           </div>
         </div>
