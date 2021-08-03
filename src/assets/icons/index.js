@@ -4,6 +4,8 @@ import PollutionIconSmall from "./PollutionIconSmall";
 import HumidityIconSmall from "./HumidityIconSmall";
 import HighValueIcon from "./HighValueIcon";
 import LowValueIcon from "./LowValueIcon";
+import HumidityIcon from "./HumidityIcon";
+import PollutionIcon from "./PollutionIcon";
 
 export {
   TemperatureIcon,
@@ -12,4 +14,6 @@ export {
   HumidityIconSmall,
   HighValueIcon,
   LowValueIcon,
+  HumidityIcon,
+  PollutionIcon,
 };
