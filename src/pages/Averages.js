@@ -1,5 +1,5 @@
 import { MeasurementsCard } from "../components/index";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import "../assets/styles/pages/Averages.scss";
 import { loadAverageValues } from "../redux/actions/averageActions";
@@ -11,18 +11,14 @@ const Averages = ({ averageValues, getAverageValues }) => {
       all: true,
     };
     getAverageValues(params);
-    console.log(averageValues);
   }, [getAverageValues]);
 
   return (
     <div className="Averages">
       <div className="averages-container">
         {averageValues.length ? (
-          averageValues.map((averageValue) => (
-            <MeasurementsCard
-              averageValue={averageValue}
-              key={averageValues.date}
-            />
+          averageValues.map((averageValue, i) => (
+            <MeasurementsCard averageValue={averageValue} key={i} />
           ))
         ) : (
           <div />
@@ -34,7 +30,7 @@ const Averages = ({ averageValues, getAverageValues }) => {
 
 function mapStateToProps(state) {
   return {
-    averageValues: state.averageValues ? state.averageValues : [],
+    averageValues: state.averageValues,
   };
 }
 

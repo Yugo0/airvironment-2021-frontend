@@ -34,10 +34,35 @@
   cursor: pointer;
 }
 
+.menu a {
+  margin-right: 20px;
+}
+
 .opacity {
   opacity: 0.5;
 }
 
 .all-caps {
   text-transform: uppercase;
+}
+
+.all-caps span {
+  font-weight: bold;
+}
+
+.selected {
+  color: $color-white;
+}
+
+@media (max-width: $mobile) {
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: unset;
+    justify-content: center;
+  }
+
+  .menu {
+    margin: 2px 0 0 32px;
+  }
 }

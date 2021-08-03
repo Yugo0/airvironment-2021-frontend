@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/styles/components/Header.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -11,11 +11,14 @@ const Header = () => {
           vironment
         </Link>
       </div>
+
       <div className="menu opacity">
-        <div className="all-caps">all data</div>
-        <Link to="/averages">
-          <div className="all-caps">averages</div>
-        </Link>
+        <NavLink to="all-data" activeClassName="selected">
+          All data
+        </NavLink>
+        <NavLink to="/averages" activeClassName="selected">
+          Averages
+        </NavLink>
       </div>
     </div>
   );
